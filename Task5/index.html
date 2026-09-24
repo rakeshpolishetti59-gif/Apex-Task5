@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO & Social Meta Tags -->
+  <title>AURA — Next-Gen Cybernetic Tech & Flagship Gear</title>
+  <meta name="description" content="Experience the pinnacle of sensory engineering. Discover AURA's flagship wireless audio, titanium wearables, and precision workstation gear.">
+  <meta name="keywords" content="AURA tech, spatial audio, titanium smartwatch, mechanical keyboard, wireless earbuds, luxury tech gear">
+  <meta name="author" content="AURA Engineering Labs">
+  <meta name="theme-color" content="#08090d">
+
+  <!-- OpenGraph & Twitter Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AURA — Next-Gen Cybernetic Tech & Flagship Gear">
+  <meta property="og:description" content="Precision engineered audio, wearables, and workstation peripherals for creators and visionaries.">
+  <meta property="og:image" content="assets/products/headphones.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="bg-ambient-lights" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container nav-wrapper">
+      
+      <!-- Brand Logo -->
+      <a href="#shop" class="brand-logo" aria-label="AURA Homepage">
+        <div class="brand-symbol">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span>AURA</span>
+          <span class="brand-tag">LABS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item active"><a href="#shop">Store</a></li>
+          <li class="nav-item"><a href="#innovations">Innovations</a></li>
+          <li class="nav-item"><a href="#compare">Compare</a></li>
+          <li class="nav-item"><a href="#orders">Track Order</a></li>
+          <li class="nav-item"><a href="#support">Support</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Tools & Actions -->
+      <div class="nav-actions">
+        
+        <!-- Live Search Bar -->
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="header-search-input" placeholder="Search gear, specs..." autocomplete="off">
+          </div>
+          <div class="search-quick-results" id="search-results-dropdown"></div>
+        </div>
+
+        <!-- Audio Synthesizer Toggle -->
+        <button class="icon-btn" id="sound-toggle-btn" title="Toggle UI Sound Effects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+        </button>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button class="icon-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist Indicator -->
+        <a href="#shop" class="icon-btn" id="wishlist-btn" title="Saved Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="badge-count" id="wishlist-badge">0</span>
+        </a>
+
+        <!-- Cart Button -->
+        <button class="cart-btn" id="cart-btn" aria-label="Open Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span>Cart</span>
+          <span class="badge-count" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Flow -->
+  <main id="main-content">
+    
+    <!-- Hero Showcase Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>2026 Next-Gen Flagship Series</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Engineering the <br>
+            <span class="hero-title-gradient">Sensory Future.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Ultra-low latency wireless audio, titanium-clad biometric instruments, and milled aluminum peripherals calibrated for extreme precision.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary">
+              <span>Explore Collection</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <a href="#compare" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>
+              </svg>
+              <span>Compare Specs</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">22ms</span>
+              <span class="stat-label">Lossless Latency</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">55hrs</span>
+              <span class="stat-label">Active Endurance</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">99.8%</span>
+              <span class="stat-label">Verified Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Interactive Hero Preview Card -->
+        <div class="hero-visual">
+          <div class="hero-card-3d">
+            <div class="hero-card-glow"></div>
+            <div class="hero-card-img-wrap">
+              <img src="assets/products/headphones.jpg" alt="AURA Studio Max Flagship Headphones" class="hero-card-img" fetchpriority="high">
+            </div>
+            <div class="hero-card-info">
+              <div class="hero-card-meta">
+                <span class="brand-tag">FLAGSHIP HEADPHONES</span>
+                <span class="star-rating">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <strong style="color:var(--text-primary); margin-left:4px; font-size:0.85rem;">4.9</strong>
+                </span>
+              </div>
+              <h3 class="hero-card-title">AURA Studio Max ANC</h3>
+              <p class="hero-card-sub">50mm Beryllium Drivers • Hybrid 4-Mic DSP</p>
+              <div class="hero-card-footer">
+                <span class="hero-card-price">$349</span>
+                <button class="btn btn-primary btn-sm" data-action="add-cart" data-id="aura-studio-max">Quick Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Trust & Performance Banner -->
+    <section class="trust-banner" aria-label="Brand Guarantees">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Free Global Express</h4>
+            <p>Complimentary delivery over $150</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>2-Year Full Coverage</h4>
+            <p>Hassle-free replacement warranty</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>30-Day Risk-Free Trial</h4>
+            <p>Love your gear or return for 100%</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div>
+            <h4>24/7 Tech Concierge</h4>
+            <p>Direct audio engineer support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Products Storefront Section -->
+    <section class="shop-section" id="shop">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Flagship Ecosystem</span>
+          <h2 class="section-title">Sensory Hardware Portfolio</h2>
+          <p class="section-desc">Handcrafted components, aerospace alloys, and proprietary firmware tailored for uncompromising performance.</p>
+        </div>
+
+        <!-- Filter Controls Bar -->
+        <div class="filter-bar">
+          <div class="category-pills" id="category-pills">
+            <button class="pill-btn active" data-category="all">All Ecosystem</button>
+            <button class="pill-btn" data-category="audio">Audio & Sound</button>
+            <button class="pill-btn" data-category="wearables">Wearables</button>
+            <button class="pill-btn" data-category="workstation">Workstation</button>
+            <button class="pill-btn" data-category="power">Power & Docks</button>
+          </div>
+
+          <div class="filter-tools">
+            <select class="sort-select" id="sort-select" aria-label="Sort catalog">
+              <option value="featured">Featured / Curated</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+              <option value="reviews">Most Reviewed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Sub-filter Drawer (Price & Stock) -->
+        <div class="filter-subbar">
+          <div class="price-filter-wrap">
+            <label for="price-slider">Price Cap:</label>
+            <input type="range" id="price-slider" class="price-slider" min="100" max="500" step="20" value="500">
+            <span class="price-display" id="price-display">$500</span>
+          </div>
+
+          <label class="toggle-filter-wrap" for="stock-toggle">
+            <span class="switch">
+              <input type="checkbox" id="stock-toggle">
+              <span class="slider-round"></span>
+            </span>
+            <span>In Stock Only</span>
+          </label>
+
+          <div class="results-count-wrap" id="results-count">
+            Loading catalog...
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="products-grid"></div>
+
+      </div>
+    </section>
+
+    <!-- Side-by-Side Product Comparison Matrix -->
+    <section class="compare-section" id="compare">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Direct Matchup</span>
+          <h2 class="section-title">Hardware Specification Matrix</h2>
+          <p class="section-desc">Evaluate acoustic drivers, battery capacities, and latency side by side.</p>
+        </div>
+
+        <div class="compare-container" id="compare-table-wrap"></div>
+      </div>
+    </section>
+
+    <!-- Proprietary Tech Innovations Section -->
+    <section class="innovations-section" id="innovations">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Breakthrough Engineering</span>
+          <h2 class="section-title">The Science Behind AURA</h2>
+          <p class="section-desc">Pushing the physical boundaries of acoustics, materials, and low-latency micro-circuitry.</p>
+        </div>
+
+        <div class="innovations-grid">
+          <div class="innovation-card">
+            <div class="innovation-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/>
+              </svg>
+            </div>
+            <h3>Vapor-Deposited Beryllium</h3>
+            <p>Our acoustic diaphragms are coated in atomic-layer beryllium, yielding ultra-high rigidity-to-weight ratios that eliminate harmonic distortion up to 48kHz.</p>
+          </div>
+
+          <div class="innovation-card">
+            <div class="innovation-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3>Quantum 22ms Protocol</h3>
+            <p>Custom 2.4GHz RF architecture utilizing frequency-hopping spread spectrum ensures zero perceptible lag during competitive gaming and studio audio editing.</p>
+          </div>
+
+          <div class="innovation-card">
+            <div class="innovation-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Grade 5 Titanium Skeleton</h3>
+            <p>Sustainably recycled aerospace titanium provides extreme tensile strength while weighing 40% less than surgical steel for all-day comfort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Tracking & Dispatch Dashboard -->
+    <section class="tracking-section" id="orders">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Live Logistics</span>
+          <h2 class="section-title">Order Tracking & History</h2>
+          <p class="section-desc">Track real-time courier dispatch status or review previous equipment acquisitions.</p>
+        </div>
+
+        <div class="tracker-card">
+          <form class="tracker-search-wrap" id="tracker-form">
+            <input type="text" id="tracker-input" class="form-input" placeholder="Enter Order ID (e.g. AURA-78241)" required>
+            <button type="submit" class="btn btn-primary">Track Order</button>
+          </form>
+
+          <div id="tracker-result-wrap"></div>
+
+          <div class="past-orders-list">
+            <h4 style="font-size:0.95rem; margin-bottom:1rem;">Your Recent Orders</h4>
+            <div id="past-orders-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews & Ratings Community -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Community Feedback</span>
+          <h2 class="section-title">Verified Owner Testimonials</h2>
+          <p class="section-desc">Read real reviews from audio producers, athletes, and workstation enthusiasts.</p>
+        </div>
+
+        <div class="reviews-layout">
+          <!-- Left: Score breakdown -->
+          <div class="reviews-score-card">
+            <div>
+              <span class="big-rating-num">4.9</span>
+              <div class="star-rating" style="margin-top:0.4rem;">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span style="font-size:0.85rem; color:var(--text-muted); display:block; margin-top:0.4rem;">Based on 400+ verified ratings</span>
+            </div>
+
+            <div class="rating-distribution">
+              <div class="dist-row"><span>5★</span><div class="dist-bar"><div class="dist-fill" style="width: 92%;"></div></div><span>92%</span></div>
+              <div class="dist-row"><span>4★</span><div class="dist-bar"><div class="dist-fill" style="width: 6%;"></div></div><span>6%</span></div>
+              <div class="dist-row"><span>3★</span><div class="dist-bar"><div class="dist-fill" style="width: 2%;"></div></div><span>2%</span></div>
+              <div class="dist-row"><span>2★</span><div class="dist-bar"><div class="dist-fill" style="width: 0%;"></div></div><span>0%</span></div>
+              <div class="dist-row"><span>1★</span><div class="dist-bar"><div class="dist-fill" style="width: 0%;"></div></div><span>0%</span></div>
+            </div>
+          </div>
+
+          <!-- Right: Reviews list & Write Review Form -->
+          <div>
+            <div class="reviews-list-wrap" id="reviews-list-wrap"></div>
+
+            <!-- Submit Review Form Card -->
+            <div class="write-review-card">
+              <h3 style="font-size:1.2rem; margin-bottom:1rem;">Leave a Community Review</h3>
+              <form id="write-review-form">
+                <div class="form-grid">
+                  <div>
+                    <label class="form-label" for="review-author-input">Your Full Name</label>
+                    <input type="text" id="review-author-input" class="form-input" placeholder="e.g. Alex Mercer" required>
+                  </div>
+                  <div>
+                    <label class="form-label" for="review-product-select">Select Hardware Model</label>
+                    <select id="review-product-select" class="form-input" required></select>
+                  </div>
+                  <div class="form-group-full">
+                    <label class="form-label">Your Rating</label>
+                    <div id="review-star-picker" style="display:flex; gap:0.4rem; cursor:pointer;">
+                      <button type="button" class="star-btn active" data-rating="1" style="font-size:1.5rem; color:#f59e0b;">★</button>
+                      <button type="button" class="star-btn active" data-rating="2" style="font-size:1.5rem; color:#f59e0b;">★</button>
+                      <button type="button" class="star-btn active" data-rating="3" style="font-size:1.5rem; color:#f59e0b;">★</button>
+                      <button type="button" class="star-btn active" data-rating="4" style="font-size:1.5rem; color:#f59e0b;">★</button>
+                      <button type="button" class="star-btn active" data-rating="5" style="font-size:1.5rem; color:#f59e0b;">★</button>
+                    </div>
+                  </div>
+                  <div class="form-group-full">
+                    <label class="form-label" for="review-title-input">Headline Title</label>
+                    <input type="text" id="review-title-input" class="form-input" placeholder="Summary of your experience" required>
+                  </div>
+                  <div class="form-group-full">
+                    <label class="form-label" for="review-content-input">Detailed Review</label>
+                    <textarea id="review-content-input" class="form-input" rows="3" placeholder="Share acoustics, comfort, and build impression..." required></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Publish Review</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion & Knowledge Section -->
+    <section class="faq-section" id="support">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Help & Documentation</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Everything you need to know about compatibility, shipping, and warranty coverage.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-question">
+              <span>What devices are compatible with AURA wireless headphones?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AURA headphones utilize Bluetooth 5.4 with backward compatibility to Bluetooth 4.0+. They support iOS, macOS, Windows, Android, Linux, and gaming consoles via our included low-latency 2.4GHz USB-C dongle.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How does the 30-Day Risk-Free Trial work?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>You have 30 calendar days from package arrival to test your gear in your daily workflow. If you are not 100% blown away, generate a prepaid return label directly from our portal for a full refund.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What promo codes are available during this launch?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>You can use promo code <strong>APEX20</strong> for an instant 20% discount on your entire cart, or <strong>AURA10</strong> for 10% off. Free shipping is automatically applied on all orders exceeding $150.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What does the 2-Year Warranty cover?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Our warranty provides comprehensive coverage against all manufacturing defects, battery degradation below 80%, driver imbalance, and headband structural stress.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Slide-Out Shopping Cart Drawer -->
+  <div class="drawer-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        Gear Cart
+      </h3>
+      <button class="close-btn" id="close-cart-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Free Shipping Progress Meter -->
+    <div class="shipping-meter">
+      <div class="meter-text" id="shipping-meter-text">Add $150 for Free Express Shipping</div>
+      <div class="meter-bar">
+        <div class="meter-fill" id="shipping-meter-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Items Container -->
+    <div class="cart-items-wrap" id="cart-items-list"></div>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer">
+      <div class="promo-form">
+        <input type="text" id="promo-input" class="promo-input" placeholder="Promo Code (Try APEX20)">
+        <button class="btn btn-secondary btn-sm" id="apply-promo-btn">Apply</button>
+      </div>
+      <div id="promo-alert-wrap"></div>
+
+      <div class="summary-rows">
+        <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div>
+        <div class="summary-row"><span>Promo Discount</span><strong id="cart-discount" style="color:var(--success);">-$0.00</strong></div>
+        <div class="summary-row"><span>Express Courier</span><strong id="cart-shipping">$0.00</strong></div>
+        <div class="summary-row total-row"><span>Estimated Total</span><strong id="cart-total">$0.00</strong></div>
+      </div>
+
+      <button class="checkout-btn" id="proceed-checkout-btn">Proceed to Secure Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Quick View / Product Detail Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close product preview">✕</button>
+      <div id="modal-product-content"></div>
+    </div>
+  </div>
+
+  <!-- Multi-Step Checkout Modal -->
+  <div class="modal-backdrop" id="checkout-backdrop" aria-hidden="true">
+    <div class="modal-card checkout-modal-card">
+      <button class="modal-close-btn" id="checkout-close-btn" aria-label="Close checkout">✕</button>
+      
+      <!-- Stepper Header -->
+      <div class="checkout-steps-bar">
+        <div class="step-indicator active" id="step-ind-1">
+          <span class="step-number">1</span>
+          <span>Shipping</span>
+        </div>
+        <div class="step-indicator" id="step-ind-2">
+          <span class="step-number">2</span>
+          <span>Payment</span>
+        </div>
+        <div class="step-indicator" id="step-ind-3">
+          <span class="step-number">3</span>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Shipping Address -->
+      <div class="checkout-step-content active" id="checkout-step-1">
+        <h3 style="font-size:1.3rem; margin-bottom:1.25rem;">Recipient & Shipping Information</h3>
+        <form id="shipping-form">
+          <div class="form-grid">
+            <div>
+              <label class="form-label" for="ship-fname">First Name</label>
+              <input type="text" id="ship-fname" class="form-input" placeholder="Jordan" required value="Jordan">
+            </div>
+            <div>
+              <label class="form-label" for="ship-lname">Last Name</label>
+              <input type="text" id="ship-lname" class="form-input" placeholder="Hayes" required value="Hayes">
+            </div>
+            <div class="form-group-full">
+              <label class="form-label" for="ship-email">Email Address (Order Confirmation)</label>
+              <input type="email" id="ship-email" class="form-input" placeholder="jordan.hayes@example.com" required value="jordan.hayes@example.com">
+            </div>
+            <div class="form-group-full">
+              <label class="form-label" for="ship-address">Street Address</label>
+              <input type="text" id="ship-address" class="form-input" placeholder="742 Evergreen Terrace" required value="742 Evergreen Terrace">
+            </div>
+            <div>
+              <label class="form-label" for="ship-city">City</label>
+              <input type="text" id="ship-city" class="form-input" placeholder="San Francisco" required value="San Francisco">
+            </div>
+            <div>
+              <label class="form-label" for="ship-zip">Postal / Zip Code</label>
+              <input type="text" id="ship-zip" class="form-input" placeholder="94107" required value="94107">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="to-payment-btn" style="width:100%;">
+            Continue to Payment Method
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: Payment Simulator -->
+      <div class="checkout-step-content" id="checkout-step-2">
+        <h3 style="font-size:1.3rem; margin-bottom:1rem;">Select Payment Method</h3>
+        
+        <div class="payment-methods-grid">
+          <div class="payment-method-card selected">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <strong>Credit Card</strong>
+          </div>
+          <div class="payment-method-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-4h-2V7h2z"/></svg>
+            <strong>Apple Pay</strong>
+          </div>
+          <div class="payment-method-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+            <strong>Crypto / Web3</strong>
+          </div>
+        </div>
+
+        <form id="payment-form">
+          <div class="form-grid">
+            <div class="form-group-full">
+              <label class="form-label" for="card-num">Card Number</label>
+              <input type="text" id="card-num" class="form-input" placeholder="4532 •••• •••• 8829" value="4532 •••• •••• 8829" required>
+            </div>
+            <div>
+              <label class="form-label" for="card-exp">Expiry Date</label>
+              <input type="text" id="card-exp" class="form-input" placeholder="08/28" value="08/28" required>
+            </div>
+            <div>
+              <label class="form-label" for="card-cvv">Security Code (CVV)</label>
+              <input type="password" id="card-cvv" class="form-input" placeholder="•••" value="842" required>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; margin-top:1.5rem;">
+            <button type="button" class="btn btn-secondary" id="back-to-shipping-btn">Back</button>
+            <button type="button" class="btn btn-primary" id="to-confirmation-btn" style="flex:1;">
+              Authorize & Place Order
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: Order Confirmation -->
+      <div class="checkout-step-content" id="checkout-step-3">
+        <div class="order-success-screen">
+          <div class="success-check-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">Order Confirmed!</h2>
+          <p style="color:var(--text-secondary); max-width:440px; margin:0 auto 1.5rem;">
+            Thank you for choosing AURA. Your gear is being prepped in our cleanroom dispatch bay.
+          </p>
+
+          <div>
+            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Your Official Tracking Identifier:</span>
+            <div class="order-id-display" id="confirmed-order-id">AURA-00000</div>
+          </div>
+
+          <div style="display:flex; gap:1rem; justify-content:center; margin-top:1.5rem;">
+            <button class="btn btn-primary" id="finish-checkout-btn">
+              Track My Dispatch
+            </button>
+            <button class="btn btn-secondary" onclick="window.print()">
+              Print Receipt
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Mobile Navigation Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#shop" class="mobile-nav-btn active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Store</span>
+    </a>
+    <a href="#compare" class="mobile-nav-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+      <span>Compare</span>
+    </a>
+    <button class="mobile-nav-btn" id="mobile-cart-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>Cart</span>
+      <span class="badge-count" id="mobile-cart-badge">0</span>
+    </button>
+    <a href="#orders" class="mobile-nav-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+      <span>Track</span>
+    </a>
+  </nav>
+
+  <!-- Floating Toast Notifications System -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom:1rem;">
+            <div class="brand-symbol">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span>AURA</span>
+              <span class="brand-tag">LABS</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:320px;">
+            Pioneering the frontiers of sensory hardware, spatial electroacoustics, and minimalist industrial design.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hardware</h4>
+          <ul class="footer-links">
+            <li><a href="#shop">Studio Max ANC</a></li>
+            <li><a href="#shop">Aether Chrono Watch</a></li>
+            <li><a href="#shop">AVALON 75 Keyboard</a></li>
+            <li><a href="#shop">Pulse Earbuds</a></li>
+            <li><a href="#shop">AURORA Sound Sphere</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ecosystem</h4>
+          <ul class="footer-links">
+            <li><a href="#innovations">Beryllium Acoustic Lab</a></li>
+            <li><a href="#compare">Compare Hardware</a></li>
+            <li><a href="#orders">Global Dispatch Tracker</a></li>
+            <li><a href="#reviews">Verified Reviews</a></li>
+            <li><a href="#support">Warranty & Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Insider Dispatch</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            Join 35,000+ engineers receiving firmware drops, secret promo codes, and acoustic masterclasses.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to AURA Insider Dispatch! Use promo code APEX20 at checkout.');">
+            <input type="email" class="newsletter-input" placeholder="engineer@domain.com" required>
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 AURA Labs Inc. All rights reserved. Apex Internship Capstone Project.</span>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="#support">Privacy Architecture</a>
+          <a href="#support">Terms of Engineering</a>
+          <a href="#support">Security Protocol</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
